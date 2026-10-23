@@ -54,14 +54,14 @@ jobs:
       # 1. 저장소 코드를 가상 머신으로 내려받기 (git clone 과 같은 역할)
       #    - 이 단계가 없으면 package.json, Dockerfile, src 가 없어서 뒤 단계가 모두 실패
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # 2. Node 22 설치 + npm 캐시
       #    - node-version: Dockerfile 의 빌드 이미지(node:22-alpine)와 같은 버전으로 맞춤
       #    - cache: npm = npm 다운로드 캐시(~/.npm)를 GitHub 캐시에 저장
       #      → package-lock.json 이 그대로면 다음 실행에서 다시 내려받지 않음
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: npm
